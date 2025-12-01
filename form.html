@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <h1 align="center">Application form</h1>
+    <table align="center">
+        <form action="abc.html">
+        <tr>
+            <td><label for="nm">Enter your name: </label></td>
+            <td><input type="text" name="nm" required></td>
+        </tr>
+        <tr>
+            <td><label for="pass">Enter your password: </label></td>
+            <td><input type="password" name="pass"></td>
+        </tr>
+        <tr>
+            <td><label for="age">Enter your age: </label></td>
+            <td><input type="text" name="age"></td>
+        </tr>
+        <tr>
+            <td><label for="gen">Select your gender: </label></td>
+            <td>Male <input type="radio" name="gen">
+            female <input type="radio" name="gen"></td>
+        </tr>
+        <tr>
+            <td><label for="dob">Select your DOB: </label></td>
+            <td><input type="date" name="dob"></td>
+        </tr>
+        <tr>
+            <td><label for="city">Select your city: </label></td>
+            <td>
+                <select name="city">
+                    <option>Madurai</option>
+                    <option>Chennai</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="feed">Your feedback: </label></td>
+            <td><textarea name="feed"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="not">Enable notifications: </label></td>
+            <td><input type="checkbox" name="not"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+            <td><button type="reset">Reset</button></td>
+        </tr>
+        </form>
+    </table>
+</body>
+</html>
