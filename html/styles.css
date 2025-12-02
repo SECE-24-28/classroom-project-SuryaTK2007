@@ -3,10 +3,44 @@
     height: 400px;
     width: 80vw;
     margin: 20px;
+    overflow: auto; 
 }
 .inner-container {
     position: relative;
     margin: 20px;
-    height: 300px;
+    height: 600px;   
     background-color: #f0f0f0;
+    padding: 20px;
+}
+.box {
+    width: 120px;
+    height: 60px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+.fix {
+    background-color: red;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.absolute {
+    background-color: blue;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.stick {
+    background-color: green;
+    position: sticky;
+    top: 0px;
+}
+.relative {
+    background-color: purple;
+    position: relative;
+    top: 20px;
+    left: 30px;
 }
