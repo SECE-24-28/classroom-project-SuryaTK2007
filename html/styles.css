@@ -1,46 +1,49 @@
-.outer-container {
-    border: 2px solid black;
-    height: 400px;
-    width: 80vw;
-    margin: 20px;
-    overflow: auto; 
+body{
+    margin: 0;
+    padding-top: 60px;
 }
-.inner-container {
-    position: relative;
-    margin: 20px;
-    height: 600px;   
-    background-color: #f0f0f0;
-    padding: 20px;
-}
-.box {
-    width: 120px;
-    height: 60px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    line-height: 60px;
-    margin-bottom: 20px;
-}
-.fix {
-    background-color: red;
+nav{
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 20px;
+    margin-top: 10px;
+
 }
-.absolute {
-    background-color: blue;
-    position: absolute;
-    top: 40px;
-    left: 40px;
+a{
+    color: yellow;
+    text-decoration: none;
+    margin: 0 15px;
 }
-.stick {
-    background-color: green;
+#hm{
+    color: green;
+    height: 90vh;
+    background-color: lightgray;
+}
+#hm h1{
     position: sticky;
-    top: 0px;
+    top: 60px;
 }
-.relative {
-    background-color: purple;
-    position: relative;
-    top: 20px;
-    left: 30px;
+#about h1{
+    position: sticky;
+    top: 60px;
+}
+#contact h1{
+    position: sticky;
+    top: 60px;
+}
+#about{
+    color: blue;
+    height: 90vh;
+    background-color: lightblue;
+}
+#contact{
+    color: red;
+    height: 90vh;
+    background-color: lightcoral;
 }
