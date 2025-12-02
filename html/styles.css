@@ -1,11 +1,12 @@
-h1{
-    color:white;
-    background-color: black;
+.outer-container {
+    border: 2px solid black;
+    height: 400px;
+    width: 80vw;
+    margin: 20px;
 }
-#p1{
-    color:blue;
-    font-size: 1.2rem;
-}
-.p2{
-    color:red;
+.inner-container {
+    position: relative;
+    margin: 20px;
+    height: 300px;
+    background-color: #f0f0f0;
 }
