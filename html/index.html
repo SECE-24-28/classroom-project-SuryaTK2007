@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
-
+<style>
+    .container{
+        display: flex;
+        flex-direction: row;
+        /*justify-content: flex-start;*/
+        justify-content: center;
+        /*justify-content: flex-end;*/
+        /*justify-content: space-between;*/
+        /*justify-content: space-around;*/
+        /*justify-content: space-evenly;*/
+        flex-wrap: wrap;
+        align-content: center;
+        /*flex-wrap: nowrap;*/
+        /*flex-flow: row wrap;*/
+        /*flex-flow: column wrap;*/
+        
+    }
+    div{
+        border: 1px solid black;
+        padding: 10px;
+        margin: 5px;
+    }
+</style>
 <body>
-    <nav>
-        <a href="#hm">Home </a><a href="#about"> About </a><a href="#contact"> Contact </a>
-    </nav>
-    <div id="hm">
-        <h1>Home</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum vitae architecto quos sapiente ipsam animi necessitatibus soluta eius labore mollitia optio voluptates, perspiciatis dolore aut placeat provident quisquam nisi.</p>
-    </div>
-    <div id="about">
-        <h1>About</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum vitae architecto quos sapiente ipsam animi necessitatibus soluta eius labore mollitia optio voluptates, perspiciatis dolore aut placeat provident quisquam nisi.</p>
-    </div>
-    <div id="contact">
-        <h1>Contact</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum vitae architecto quos sapiente ipsam animi necessitatibus soluta eius labore mollitia optio voluptates, perspiciatis dolore aut placeat provident quisquam nisi.</p>
+    <div class="container">
+        <div>Item-1</div>
+        <div>Item-2</div>
+        <div>Item-3</div>
+        <div>Item-4</div>
+        <div>Item-5</div>
+        <div>Item-6</div>
     </div>
 </body>
 </html>
