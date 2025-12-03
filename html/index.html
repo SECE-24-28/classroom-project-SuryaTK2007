@@ -6,11 +6,16 @@
     <title>Document</title>
     <script>
         function demo(){
-            alert("Emergency!");
+            // document.write("Hello World");
+            var name = document.getElementById("t1").value
+            document.getElementById("t2").value = name;
+            alert("Hello " + name);
         }
     </script>
 </head>
 <body>
+    <input type="text" placeholder="Enter name" id="t1">
+    <input type="text" placeholder="Enter name" id="t2">
     <button onclick="demo()">Click Me</button>
 </body>
 </html>
