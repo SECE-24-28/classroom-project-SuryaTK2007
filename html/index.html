@@ -5,17 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function demo(){
-            // document.write("Hello World");
-            var name = document.getElementById("t1").value
-            document.getElementById("t2").value = name;
-            alert("Hello " + name);
+        function Add(){
+            var a=parseInt(document.getElementById("t1").value);
+            var b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a+b;
+        }
+        function Sub(){
+            var a=parseInt(document.getElementById("t1").value);
+            var b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a-b;
+        }
+        function Mul(){
+            var a=parseInt(document.getElementById("t1").value);
+            var b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a*b;
+        }
+        function Div(){
+            var a=parseInt(document.getElementById("t1").value);
+            var b=parseInt(document.getElementById("t2").value);
+            document.getElementById("t3").value=a/b;
         }
     </script>
 </head>
 <body>
-    <input type="text" placeholder="Enter name" id="t1">
-    <input type="text" placeholder="Enter name" id="t2">
-    <button onclick="demo()">Click Me</button>
+    <label for="num1">Enter First Number: </label>
+    <input type="text" placeholder="First number" id="t1" name="num1"><br>
+    <label for="num2">Enter Second Number: </label>
+    <input type="text" placeholder="Second number" id="t2" name="num2"><br>
+    <label for="num3">The answer is: </label>
+    <input type="text" placeholder="Answer" id="t3" name="num3"><br>
+    <button onclick="Add()">ADD</button>
+    <button onclick="Sub()">SUB</button>
+    <button onclick="Mul()">MUL</button>
+    <button onclick="Div()">DIV</button>
 </body>
 </html>
