@@ -6,47 +6,84 @@
     <title>Document</title>
 </head>
 <style>
-    .container{
-        /*justify-content: flex-start;*/
-        /*justify-content: flex-end;*/
-        /*justify-content: space-between;*/
-        /*justify-content: space-around;*/
-        /*justify-content: space-evenly;*/
-        /* flex-wrap: wrap; */
-        /*flex-flow: row wrap;*/
-        /*flex-flow: column wrap;*/
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ol{
+        list-style-type: none;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: nowrap;
-    }
-    
-    .container{
         flex-wrap: wrap;
+        justify-content: space-between;
     }
-    
-    .box{
-        border: 1px solid black;
-        padding: 10px;
-        margin: 5px;
-        flex: 1;
-        min-width: 250px;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        flex-wrap: wrap;
+        color: white;
+        /*background-color: #f0f0f0;*/
+    }
+    li{
+        padding: 0px 15px;
+    }
+    video{
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        z-index: -1;
+        top: 0px;
+    }
+    .text{
+        color: white;
+        padding: 20px;
+        margin-top: 200px;
+    }
+    button{
+        padding: 10px 20px;
+        background-color: teal;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+    button:hover{
+        background-color: darkcyan;
+        transform: translateX(10px);
+    }
+    footer{
+        margin-top: 150px;
+        color: white;
+        padding: 20px;
     }
 </style>
 <body>
-    <div class="container">
-        <div class="box">
-            <h1>Card 1</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sint placeat totam fugiat eum quas, beatae est nulla temporibus, ducimus ipsum tempora, sed assumenda dolorum illo? Cum beatae quas molestias?</p>
+    <nav>
+        <h1>Travel</h1>
+        <ol>
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Galley</a></li>
+        </ol>
+    </nav>
+    <main>
+        <video src="abc.mp4" autoplay loop></video>
+        <div class="text">
+            <h1>Travel around the world</h1><br>
+            <h3>Explore the beauty of the world</h3><br>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, minus! Itaque, vitae quia quas excepturi dolore nesciunt reiciendis quam temporibus ipsa autem ad, laborum iure architecto, est unde vel similique?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptates magni ullam repudiandae animi, inventore architecto veniam. Dolorum vel soluta iure, quia expedita deserunt. Fugiat reiciendis iste modi vitae tempore!
+            </p><br>
+            <button>EXPLORE</button>
         </div>
-        <div class="box">
-            <h1>Card 2</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sint placeat totam fugiat eum quas, beatae est nulla temporibus, ducimus ipsum tempora, sed assumenda dolorum illo? Cum beatae quas molestias?</p>
-        </div>
-        <div class="box">
-            <h1>Card 3</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sint placeat totam fugiat eum quas, beatae est nulla temporibus, ducimus ipsum tempora, sed assumenda dolorum illo? Cum beatae quas molestias?</p>
-        </div>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Travel. All rights reserved.</p>
+    </footer>
 </body>
 </html>
