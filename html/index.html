@@ -6,14 +6,27 @@
     <title>Document</title>
 
     <script>
-        function demo(){
+        const images=[
+            "xyz.jpg",
+            "def.jpg",
+            "abc.jpeg"
+        ];
+        let i=0;
+        function prev(){
             let a=document.getElementById("i1");
-            a.src="abc.jpeg";
+            a.src=images[(i+1)%images.length];
+            i++;
+        }
+        function next(){
+            let a=document.getElementById("i1");
+            a.src=images[(i-1)%images.length];
+            i++;
         }
     </script>
 </head>
 <body>
     <img src="xyz.jpg" width="500" id="i1"><br>
-    <button onclick="demo()">Click Me</button>
+    <button onclick="prev()">Previous</button>
+    <button onclick="next()">Next</button>
 </body>
 </html>
