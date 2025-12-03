@@ -7,15 +7,13 @@
 
     <script>
         function demo(){
-            alert(document.getElementById("opt").value);
+            let a=document.getElementById("i1");
+            a.src="abc.jpeg";
         }
     </script>
 </head>
 <body>
-    <select id="opt" onchange="demo()">
-        <option>Cricket</option>
-        <option>FootBall</option>
-        <option>Boxing</option>
-    </select>
+    <img src="xyz.jpg" width="500" id="i1"><br>
+    <button onclick="demo()">Click Me</button>
 </body>
 </html>
