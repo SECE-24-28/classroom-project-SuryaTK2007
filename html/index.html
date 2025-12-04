@@ -2,32 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 
-<body id="main">   
-    <button id="btn">Create</button>
-    <button id="btn1">Delete</button>
+<body id="main">
+    <label for="input">Enter the items: </label>
+    <input type="text" id="fld" name="input">
+    <button id="add" type="submit">Add</button>
     <script>
-        let btn=document.getElementById("btn");
-        let btn1=document.getElementById("btn1");
+        let btn=document.getElementById("add");
+        let ol=document.createElement("ol");
         btn.addEventListener("click", ()=>{
             let body=document.getElementById("main");
-            let h1=document.getElementById("h1");
-            if(!h1){
-                h1=document.createElement("h1");
-                h1.id="h1";
-                h1.innerHTML="Button Clicked";
-                body.appendChild(h1);
-            }
-        })
-        btn1.addEventListener("click", ()=>{
-            let body=document.getElementById("main");
-            let h1=document.getElementById("h1");
-            if(h1){
-                body.removeChild(h1);
-            }
-        })
+            let li=document.createElement("li");
+            let input=document.getElementById("fld").value;
+            li.innerHTML=input;
+            ol.appendChild(li);
+            body.appendChild(ol);
+        });
     </script> 
 </body>
 </html>
