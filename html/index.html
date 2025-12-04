@@ -3,32 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-
-    <script>
-        function demo() {
-            let body = document.getElementById("main");
-            let h1 = document.getElementById("hd");
-            if (!h1) {
-                h1 = document.createElement("h1");
-                h1.id = "hd";
-                h1.innerText = "Peacock is our national bird";
-                body.appendChild(h1);
-            }
-        }
-        function del() {
-            let body = document.getElementById("main");
-            let h1 = document.getElementById("hd");
-            if (h1) {
-                body.removeChild(h1);
-            }
-        }
-    </script>
 </head>
 
-<body id="main">
-    <div class="temp">
-        <button onclick="demo()">Click Me</button>
-        <button onclick="del()">Delete</button>
-    </div>
+<body id="main">   
+    <button id="btn">Click Me</button>
+    <script>
+        let btn=document.getElementById("btn");
+        btn.addEventListener("click", function(){
+            alert("Success");
+        })
+    </script> 
 </body>
 </html>
