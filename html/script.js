@@ -1,17 +1,10 @@
-mobile={brand:"Apple", model:"iPhone 12", os:"iOS 14"};
-console.log(mobile);
-console.log(mobile.brand);
-mobile.model="iPhone 13";
-console.log(mobile.model);
-delete mobile.os;
-console.log(mobile);
-newMobile=Object.assign(mobile);
-console.log(newMobile); 
-let keys=Object.keys(mobile);
-console.log(keys);
-let values=Object.values(mobile);
-console.log(values);
-let entries=Object.entries(mobile); 
-console.log(entries);
-let has=mobile.hasOwnProperty("brand");
-console.log(has);   
+let students = {name: "Surya", age: 18, demo:function(){
+    console.log("Hello "+this.name);
+}};
+console.log(students.name);
+students.demo();
+
+let employees = {name: "Alice", age: 30, demo:()=>{
+    console.log("Hello "+this.name);} //this keyword will not work for arrow functions
+};
+employees.demo();
