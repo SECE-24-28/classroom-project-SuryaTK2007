@@ -14,3 +14,5 @@ arr.splice(0,2); // removes 2 elements from index 0
 console.log(arr);
 let arr1=arr.slice(0,1); // creates new array from index 0 to 1 (not including 1)
 console.log(arr1);
+arr.splice(0,2,"Ramesh","Suresh"); // adds elements at index 0 by removing 2 elements
+console.log(arr);
