@@ -5,29 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>Digital Clock</h1>
-    <p id="time"></p>
+
+<body id="main">
+    <h1 id="title">Light Mode</h1>
+    <button id="btn">Switch Mode</button>
+
     <script>
-        let sec=0;
-        let min=0;
-        let hr=0;
-        function displayTime(){
-            sec++;
-            if(sec==60){
-                sec=0;
-                min++;
-                if(min==60){
-                    min=0;
-                    hr++;
-                    if(hr==24){
-                        hr=0;
-                    }
-                }
+        let btn = document.getElementById("btn");
+        let body = document.getElementById("main");
+        let title = document.getElementById("title");
+        let dark = false;
+        btn.addEventListener("click", () => {
+            dark = !dark;   
+            if (dark) {
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+                title.innerText = "Dark Mode";
+            } else {
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+                title.innerText = "Light Mode";
             }
-            document.getElementById("time").innerText=`${hr<10?"0"+hr:hr}:${min<10?"0"+min:min}:${sec<10?"0"+sec:sec}`;
-        }
-        setInterval(displayTime,1000);
+        });
     </script>
 </body>
 </html>
