@@ -6,11 +6,27 @@
 </head>
 
 <body id="main">   
-    <button id="btn">Click Me</button>
+    <button id="btn">Create</button>
+    <button id="btn1">Delete</button>
     <script>
         let btn=document.getElementById("btn");
+        let btn1=document.getElementById("btn1");
         btn.addEventListener("click", ()=>{
-            alert("Success");
+            let body=document.getElementById("main");
+            let h1=document.getElementById("h1");
+            if(!h1){
+                h1=document.createElement("h1");
+                h1.id="h1";
+                h1.innerHTML="Button Clicked";
+                body.appendChild(h1);
+            }
+        })
+        btn1.addEventListener("click", ()=>{
+            let body=document.getElementById("main");
+            let h1=document.getElementById("h1");
+            if(h1){
+                body.removeChild(h1);
+            }
         })
     </script> 
 </body>
