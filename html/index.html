@@ -5,15 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let bool=true;
         function demo(){
-            let body=document.getElementById("main");
-            let h1=document.createElement("h1");
-            h1.innerText="Hello World";
-            body.appendChild(h1);
+            if(bool){
+                let body=document.getElementById("main");
+                let h1=document.getElementById("hd");
+                h1.innerText="Peacock is our national bird";
+                bool=false;
+            }
+            else{
+                let body=document.getElementById("main");
+                let h1=document.getElementById("hd");
+                h1.innerText="Peacock";
+                bool=true;
+            }
         }
     </script>
+    <style>
+        .temp{
+            margin-top: 200px;
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body id="main">
-    <button onClick="demo()">Click Me</button>
+    <div class="temp">
+        <h1 id="hd">Peacock</h1>
+        <button onClick="demo()" id="btn">Click Me</button>
+    </div>
+    
 </body>
 </html>
