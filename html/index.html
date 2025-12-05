@@ -6,29 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>To Do List</h1>
-    <label for="new-task">New Task:</label>
-    <input type="text" id="new-task" name="new-task">
-    <button id="add-task-button">Add Task</button>
-    <button id="clear-tasks-button">Clear Tasks</button>
-    <ul id="task-list">
+    <button id="load">Load Users</button>
+    <p id="para"></p>
+
     <script>
-        document.getElementById('add-task-button').addEventListener('click', function() {
-            const taskInput = document.getElementById('new-task');
-            const taskText = taskInput.value;
-            if (taskText !== '') {
-                const taskList = document.getElementById('task-list');
-                const listItem = document.createElement('li');
-                listItem.textContent = taskText;
-                taskList.appendChild(listItem);
-                taskInput.value = '';
-            }
-        });
-        document.getElementById('clear-tasks-button').addEventListener('click', function() {
-            const taskList = document.getElementById('task-list');
-            taskList.innerHTML = '';
+        let load = document.getElementById("load");
+        let para = document.getElementById("para");
+        let res;
+        load.addEventListener("click", () => {
+            fetch("https://jsonplaceholder.typicode.com/users")
+                .then(x => x.json())
+                .then(data => {
+                    res = data;           
+                    para.innerHTML = JSON.stringify(res, null, 2);  
+                });
         });
     </script>
-    </ul>
 </body>
 </html>
