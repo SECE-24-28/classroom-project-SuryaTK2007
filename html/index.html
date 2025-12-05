@@ -6,45 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="load">Load Users</button><br>
-     <h1>Search By Name</h1>
-    <label for="search">Enter the name to search</label>
-    <input type="text" name="search" id="input"><br><br>
-    <button id="search" name="search">Search</button>
-    <p id="para"></p>
+    <input type="text" id="t1">
+    <input  type="text" id="t2">
+    <button id="save">Save</button>
     <script>
-        let load = document.getElementById("load");
-        let para = document.getElementById("para");
-        let input1= document.getElementById("input");
-        let search=document.getElementById("search");
-        let users=[];
-        load.addEventListener("click", async()=>{
-            const res=await fetch("https://jsonplaceholder.typicode.com/users");
-            const data=await res.json();
-            users=data;
-            let output = "";
-            users.forEach(user => {
-                output += user.name + "<br>";
-            });
-            para.innerHTML=output;
-        });
-        input1.addEventListener("keyup", ()=>{
-            let val=input1.value.toLowerCase();
-            if(users.length===0){
-                para.innerHTML="Please load the users";
-            }
-            let filtered=users.filter(user=>user.name.toLowerCase().includes(val));
-            if(filtered.length===0){
-                para.innerHTML="No user found";
-            }
-            else{
-                let out="";
-                filtered.forEach((u)=>{
-                    out+=u.name+"<br>"
-                });
-                para.innerHTML=out;
-            }
-        });
+        let t1=document.getElementById("t1");
+        let t2=document.getElementById("t2");
+        let save=document.getElementById("save");
+        save.addEventListener("click", ()=>{
+            let name=t1.value;
+            let mobile=t2.value;
+            let obj={"name":name, "mobile":mobile};
+            localStorage.setItem("user", JSON.stringify(obj));
+            alert("saved");
+        })
+        
     </script>
 </body>
 </html>
