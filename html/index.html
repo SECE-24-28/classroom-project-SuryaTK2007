@@ -6,23 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="t1">
-    <input  type="text" id="t2">
+    <input type="text" id="t1" placeholder="Name">
+    <input type="text" id="t2" placeholder="Mobile">
     <button id="save">Save</button>
+    <button id="load">Load Users</button>
+    <p id="output"></p>
     <script>
-        let t1=document.getElementById("t1");
-        let t2=document.getElementById("t2");
-        let save=document.getElementById("save");
-        let i=0;
-        save.addEventListener("click", ()=>{
-            let name=t1.value;
-            let mobile=t2.value;
-            let obj={"name":name, "mobile":mobile};
-            localStorage.setItem("user"+i, JSON.stringify(obj));
-            alert("saved");
+        let t1 = document.getElementById("t1");
+        let t2 = document.getElementById("t2");
+        let save = document.getElementById("save");
+        let load = document.getElementById("load");
+        let output = document.getElementById("output");
+        let i = 0;
+        save.addEventListener("click", () => {
+            let name = t1.value;
+            let mobile = t2.value;
+            let obj = { name, mobile };
+            localStorage.setItem("user" + i, JSON.stringify(obj));
+            alert("Saved!");
             i++;
-        })
-        
+        });
+        load.addEventListener("click", () => {
+            let result = "";
+            for (let j = 0; j < localStorage.length; j++) {
+                let key = "user" + j;
+                let data = localStorage.getItem(key);
+
+                if (data) {
+                    let obj = JSON.parse(data);
+                    result += obj.name + " - " + obj.mobile + "<br>";
+                }
+            }
+            output.innerHTML = result || "No users found!";
+        });
     </script>
 </body>
 </html>
