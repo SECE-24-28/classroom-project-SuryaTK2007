@@ -13,12 +13,14 @@
         let t1=document.getElementById("t1");
         let t2=document.getElementById("t2");
         let save=document.getElementById("save");
+        let i=0;
         save.addEventListener("click", ()=>{
             let name=t1.value;
             let mobile=t2.value;
             let obj={"name":name, "mobile":mobile};
-            localStorage.setItem("user", JSON.stringify(obj));
+            localStorage.setItem("user"+i, JSON.stringify(obj));
             alert("saved");
+            i++;
         })
         
     </script>
