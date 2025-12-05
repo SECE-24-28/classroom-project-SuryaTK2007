@@ -1,17 +1,12 @@
-let arr=[10, 20, 30];
-let [a,b,c]=arr;
-console.log(a); 
-console.log(b); 
-console.log(c); 
+// Asynchronous example
+// console.log("process 1");
+// setInterval(()=>console.log("process 2"), 2000);
+// console.log("process 3");
 
-let obj={x:100, y:200, z:300};
-let {x, y, z}=obj;
-console.log(x); 
-console.log(y); 
-console.log(z);
-
-let obj2={p:1, q:2, r:3};
-let {p:m, q:n, r:o}=obj2;
-console.log(m); 
-console.log(n); 
-console.log(o);
+console.log("a");
+setTimeout(()=>{
+    console.log("b");
+    setTimeout(()=>{
+        console.log("c");
+    }, 2000);
+}, 2000);
