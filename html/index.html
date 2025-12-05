@@ -6,23 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="load">Load Users</button>
-    <p id="para"></p>
-
+    <input type="text" id="input1">
+    <input type="text" id="input2">
     <script>
-        let load = document.getElementById("load");
-        let para = document.getElementById("para");
-        let x;
-        load.addEventListener("click", async()=>{
-            const res=await fetch("https://jsonplaceholder.typicode.com/users");
-            const data=await res.json();
-            let output = "";
-            data.forEach(user => {
-                output += user.name + "<br>";
-            });
-            para.innerHTML=output;
-        });
-        
+        let t1=document.getElementById("input1");
+        t1.addEventListener("keyup", ()=>{
+            document.getElementById("input2").value=t1.value;
+        })
     </script>
 </body>
 </html>
