@@ -4,11 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let city="New York";
 
   return (
     <>
-      <h1>React is not a framework, it is a library</h1>
+      <p>{city}</p>
     </>
   )
 }
