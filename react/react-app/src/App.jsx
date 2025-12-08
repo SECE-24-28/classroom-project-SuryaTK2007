@@ -4,10 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  let age=20;
+  function demo(a){
+    console.log("Hello " + a);
+  }
   return (
     <>
-      <p>{age>=18?"Adult":"Minor"}</p>
+      <button onClick={()=>demo("Surya")}>Click Me</button>
     </>
   )
 }
