@@ -1,12 +1,8 @@
 import React from 'react'
 import './Temp.css'
-function Temp() {
+function Temp({param}) {
     return (
-
-    <div className='abc'>
-      <h1>Tiger</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, sapiente. Recusandae et maxime veniam tempora optio, doloremque aliquid libero fugit earum unde totam quod vero molestiae numquam nam repellat id!</p>
-    </div>
+      <h1>{param}</h1>
   )
 }
 
