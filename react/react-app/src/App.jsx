@@ -8,8 +8,9 @@ function App() {
   return (
     <>
       <Temp param='Title'/>
+
      {
-        members.map((member)=>(<p>{member}</p>))
+        members.length!=0?members.map((member)=>(<p>{member}</p>)):(<p>The list is empty</p>)
      }
     </>
   )
