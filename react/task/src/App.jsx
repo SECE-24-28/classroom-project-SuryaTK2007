@@ -7,14 +7,23 @@ function App() {
     const newList=list.filter((li)=>li.id!=id)
     setList(newList)
   }
-
+  const handleCheck=(id)=>{
+    const newList=list.map((li)=>
+      li.id===id?{...li, fee:!li.fee}:li
+    );
+    setList(newList);
+    const updated=newList.find((li)=>
+      li.id==id
+  )
+    console.log(updated.name, updated.fee)
+  }
   return (
     <>
       <h1>Students</h1>
       <ul>
           {list.map((li)=>
           <li key={li.id}>
-            <input type='checkbox' checked={li.fee}/>
+            <input type='checkbox' checked={li.fee} onChange={()=>handleCheck(li.id)}/>
             {li.name}
             <button onClick={()=>handleDelete(li.id)}>Delete</button>
           </li>
