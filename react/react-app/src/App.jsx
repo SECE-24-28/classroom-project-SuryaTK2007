@@ -1,17 +1,35 @@
 import { useState } from 'react'
 import './App.css'
-import Temp from './Temp.jsx'
 
 function App() {
-
-  let members=["Surya", "Saumyajit", "Yaazh"];
+  const [list, setList]=useState([{id:1, sname:"surya", fee:false},{id:2, sname: "hari", fee:false},{id:3, sname:"kumar", fee:true}]);
+  const handleDelete=(id)=>{
+    const newList=list.filter((item)=> item.id!==id);
+    setList(newList);
+  }
+  const handleCheck = (id) => {
+    const newList = list.map((item) =>
+      item.id === id ? { ...item, fee: !item.fee } : item
+    )
+    const updated = newList.find(item => item.id === id);
+    console.log("Student:", updated.sname, "Fee Status:", updated.fee);
+    setList(newList);
+  }
   return (
     <>
-      <Temp param='Title'/>
-
-     {
-        members.length!=0?members.map((member)=>(<p>{member}</p>)):(<p>The list is empty</p>)
-     }
+      <h1>Students List</h1>
+      <hr/>
+      <ul>
+        {
+          list.map((item)=>
+            <li key={item.id}>
+              <input type="checkbox" checked={item.fee} onChange={()=>handleCheck(item.id)}/>
+              {item.sname}
+              <button onClick={()=>handleDelete(item.id)}>Delete</button>
+            </li>
+          )
+        }
+      </ul>
     </>
   )
 }
