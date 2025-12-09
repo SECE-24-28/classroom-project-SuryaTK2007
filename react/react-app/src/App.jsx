@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [list, setList]=useState([{id:1, sname:"surya", fee:false},{id:2, sname: "hari", fee:false},{id:3, sname:"kumar", fee:true}]);
+  const originalList = [{id:1, sname:"surya", fee:false},{id:2, sname: "hari", fee:false},{id:3, sname:"kumar", fee:true}];
   const handleDelete=(id)=>{
     const newList=list.filter((item)=> item.id!==id);
     setList(newList);
@@ -13,6 +14,10 @@ function App() {
     )
     const updated = newList.find(item => item.id === id);
     console.log("Student:", updated.sname, "Fee Status:", updated.fee);
+    setList(newList);
+  }
+  const handleRevert=()=>{
+    const newList=originalList.map((item)=>({...item, fee:false}));
     setList(newList);
   }
   return (
@@ -30,6 +35,7 @@ function App() {
           )
         }
       </ul>
+      <button onClick={()=>handleRevert()}>Revert</button>
     </>
   )
 }
