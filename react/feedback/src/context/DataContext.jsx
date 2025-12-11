@@ -12,7 +12,7 @@ export const DataProvider=({children})=>{
     fetchData()
   },[])
   return(
-    <DataContext.Provider value={posts}>
+    <DataContext.Provider value={{posts}}>
         {children}
     </DataContext.Provider>
   )

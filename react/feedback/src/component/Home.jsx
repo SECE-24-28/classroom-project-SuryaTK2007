@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import DataContext from '../context/DataContext.jsx'
 
 const Home = () => {
-  const posts = useContext(DataContext)
+  const {posts} = useContext(DataContext)
   return (
     <>
     {
