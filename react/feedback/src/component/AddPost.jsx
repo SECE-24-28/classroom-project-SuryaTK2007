@@ -5,19 +5,7 @@ import api from '../api/Post'
 
 const AddPost = () => {
 
-  const {posts, fetchData, title, setTitle, body, setBody}=useContext(DataContext)
-  const handleSubmit=async(e)=>{
-    e.preventDefault()
-    const newObj={
-      id:posts.length+1,
-      title:title,
-      body:body
-    }
-    await api.post("/feedback", newObj)
-    setTitle('')
-    setBody('')
-    fetchData()
-  }
+  const {posts, fetchData, title, setTitle, body, setBody, handleSubmit}=useContext(DataContext)
 
   return (
     <div>
