@@ -17,7 +17,7 @@ export const DataProvider=({children})=>{
   useEffect(()=>{
     const result=posts.filter((post)=>post.title.includes(search));
     setSearchResult(result);
-  },[search, posts])
+  },[search])
   return(
     <DataContext.Provider value={{posts, search, setSearch, searchResult}}>
         {children}
