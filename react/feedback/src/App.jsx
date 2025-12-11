@@ -8,13 +8,21 @@ function App() {
   useEffect(()=>{
     const fetchData=async()=>{
       const res=await api.get("/feedback");
-      console.log(res.data);
+      setPosts(res.data)
     }
     fetchData()
   },[])
   return (
     <>
-     
+     {
+      posts.map((post)=>
+        <div key={post.id}>
+          <h3>{post.id}</h3>
+          <h4>{post.title}</h4>
+          <p>{post.body}</p>
+        </div>
+      )
+     }
     </>
   )
 }
