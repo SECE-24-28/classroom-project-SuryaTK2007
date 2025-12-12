@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import api from "../api/Post";
+import { useNavigate } from "react-router-dom";
 
 const DataContext = createContext();
 
@@ -9,10 +10,10 @@ export const DataProvider = ({ children }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-
+  const navigate=useNavigate();
   const fetchData = async () => {
     const res = await api.get("/feedback");
-    setPosts(res.data);
+    setPosts(res.data.reverse());
   };
 
   useEffect(() => {
@@ -40,6 +41,8 @@ export const DataProvider = ({ children }) => {
     setTitle("");
     setBody("");
     fetchData();
+    alert("feedback added successfully!");
+    navigate('/');
   };
 
   return (
