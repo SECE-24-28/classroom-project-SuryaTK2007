@@ -3,7 +3,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { DataContext } from '../context/DataContext'
 const EditPost = () => {
-    const {posts} = useContext(DataContext);
+    const {posts, handleDelete} = useContext(DataContext);
     const { id } = useParams();
     const post = posts.find((post) => post.id==id);
     if(!post){
@@ -13,7 +13,7 @@ const EditPost = () => {
     <div>
       <input type='text' value={post.title}/><br /><br />
       <textarea value={post.body}/><br /><br />
-      <button>Delete</button>
+      <button onClick={()=>handleDelete(post.id)}>Delete</button>
     </div>
   )
 }

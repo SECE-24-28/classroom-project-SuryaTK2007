@@ -31,7 +31,7 @@ export const DataProvider = ({ children }) => {
     e.preventDefault();
 
     const newObj = {
-      id: posts.length + 1,
+      id: (posts.length + 1).toString(),
       title:title,
       body:body,
     };
@@ -42,6 +42,13 @@ export const DataProvider = ({ children }) => {
     setBody("");
     fetchData();
     alert("feedback added successfully!");
+    navigate('/');
+  };
+  
+  const handleDelete = async (id) => {
+    await api.delete(`/feedback/${id}`);
+    fetchData();
+    alert("Post deleted successfully!");
     navigate('/');
   };
 
@@ -59,6 +66,7 @@ export const DataProvider = ({ children }) => {
         body,
         setBody,
         handleSubmit,
+        handleDelete,
       }}
     >
       {children}
