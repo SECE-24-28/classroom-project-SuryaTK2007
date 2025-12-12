@@ -31,8 +31,8 @@ export const DataProvider = ({ children }) => {
 
     const newObj = {
       id: posts.length + 1,
-      title,
-      body,
+      title:title,
+      body:body,
     };
 
     await api.post("/feedback", newObj);
