@@ -6,6 +6,7 @@ import Search from './component/Search';
 import AddPost from './component/AddPost';
 import { Link } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
+import EditPost from './component/EditPost';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -28,6 +29,7 @@ function App() {
           </>
         }></Route>
         <Route path='newpost' element={<AddPost/>}></Route>
+        <Route path='editpost/:id' element={<EditPost/>}></Route>
       </Routes>
     </div>
   )
