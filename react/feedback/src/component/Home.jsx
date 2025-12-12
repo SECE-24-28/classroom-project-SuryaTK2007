@@ -8,13 +8,12 @@ const Home = () => {
     <>
     {
       posts.map((post)=>
-        <div key={post.id}>
+        <div key={post.id} className="post">
           <Link to={`/editpost/${post.id}`}>
-          <h3>{post.id}</h3>
-          <h4>{post.title}</h4>
-          <p>{post.body}</p>
+            <h3>{post.id}</h3>
+            <h4>{post.title}</h4>
+            <p>{post.body}</p>
           </Link>
-          <hr/>
         </div>
       )
      }

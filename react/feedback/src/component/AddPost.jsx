@@ -10,8 +10,8 @@ const AddPost = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type='text' name='' id='' placeholder='Title' value={title} onChange={(e)=>setTitle(e.target.value)}/><br/><br/>
-        <textarea name='' id='' placeholder='body' value={body} onChange={(e)=>setBody(e.target.value)}/><br /><br />
+        <input type='text' placeholder='Title' value={title} onChange={(e)=>setTitle(e.target.value)}/>
+        <textarea placeholder='Body' value={body} onChange={(e)=>setBody(e.target.value)}/>
         <button type='submit'>Save</button>
       </form>
     </div>

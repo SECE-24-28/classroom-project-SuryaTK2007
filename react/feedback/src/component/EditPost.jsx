@@ -11,8 +11,8 @@ const EditPost = () => {
     }
   return (
     <div>
-      <input type='text' value={post.title}/><br /><br />
-      <textarea value={post.body}/><br /><br />
+      <input type='text' value={post.title}/>
+      <textarea value={post.body}/>
       <button onClick={()=>handleDelete(post.id)}>Delete</button>
     </div>
   )
