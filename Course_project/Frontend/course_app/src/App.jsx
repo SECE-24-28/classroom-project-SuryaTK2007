@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { getCourses } from './api/CourseApi'
+import { getCourses, addCourses} from './api/CourseApi'
 
 function App() {
   const [courses, setCourses]=useState([]);
@@ -13,13 +13,23 @@ function App() {
   useEffect(()=>{
     fetchCourse();
   },[])
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+    const course={title,duration};
+    const res=await addCourses(course);
+    setCourses([...courses,res.data]);
+    setTitle("");
+    setDuration("");
+  }
+
   return (
     <>
      <h1>Course App</h1>
-     <form action="">
-      <input type='text'/><br /><br />
-      <input type='text'/><br /><br />
-      <button>Add Course</button>
+     <form action="" onSubmit={handleSubmit}>
+      <input type='text'value={title} onChange={(e)=>setTitle(e.target.value)}/><br /><br />
+      <input type='text'value={duration} onChange={(e)=>setDuration(e.target.value)}/><br /><br />
+      <button type='submit'>Add Course</button>
      </form>
       <ul>
         {
