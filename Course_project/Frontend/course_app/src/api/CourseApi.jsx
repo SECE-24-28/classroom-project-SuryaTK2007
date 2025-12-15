@@ -1,6 +1,6 @@
 import axios from 'axios'
-const api=axios.create({baseURL:"https://localhost:4000/api"})
-export const getCourse=()=>axios.get("/courses")
-export const addCourses=(course)=>axios.post("/courses",course);
-export const updateCourses=(id, course)=>axios.put(`courses/${id}`, course);
-export const deleteCourses=(id)=>axios.get(`courses/${id}`);
+const api=axios.create({baseURL:"http://localhost:4000/api"})
+export const getCourses=()=>api.get("/courses")
+export const addCourses=(course)=>api.post("/courses",course);
+export const updateCourses=(id, course)=>api.put(`courses/${id}`, course);
+export const deleteCourses=(id)=>api.get(`courses/${id}`);
