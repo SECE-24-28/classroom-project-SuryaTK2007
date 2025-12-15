@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/mycourse")
+  .connect("mongodb://localhost:27017/mycourse")
   .then(() => console.log("DB connection successful"))
   .catch((err) => console.error("DB error:", err));
 
@@ -24,6 +24,7 @@ app.get("/api/courses", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
 app.post("/api/courses", async (req, res) => {
   try {
     const { title, duration } = req.body;
@@ -40,20 +41,18 @@ app.post("/api/courses", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
 app.put("/api/courses/:id", async (req, res) => {
   try {
     const { title, duration } = req.body;
-
     const updatedCourse = await mycourse.findByIdAndUpdate(
       req.params.id,
       { title, duration },
       { new: true }
     );
-
     if (!updatedCourse) {
       return res.status(404).json({ message: "Course not found" });
     }
-
     res.json(updatedCourse);
   } catch (err) {
     console.error("PUT ERROR:", err);
@@ -64,11 +63,9 @@ app.put("/api/courses/:id", async (req, res) => {
 app.delete("/api/courses/:id", async (req, res) => {
   try {
     const course = await mycourse.findByIdAndDelete(req.params.id);
-
     if (!course) {
       return res.status(404).json({ message: "Course not found" });
     }
-
     res.json({ message: "Course deleted successfully" });
   } catch (err) {
     console.error("DELETE ERROR:", err);
