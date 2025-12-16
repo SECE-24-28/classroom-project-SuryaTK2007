@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { getCourses, addCourses} from './api/CourseApi'
+import { Link } from 'react-router-dom';
 
 function App() {
   const [courses, setCourses]=useState([]);
@@ -33,8 +34,12 @@ function App() {
      </form>
       <ul>
         {
-          courses.map((course)=>(
-            <li>{course.title} - {course.duration}</li>
+          courses.map((course) => (
+            <li key={course._id}>
+              <Link to="/editcourse">
+                {course.title} - {course.duration}
+              </Link>
+            </li>
           ))
         }
         
